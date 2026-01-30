@@ -14,7 +14,6 @@ int randomNumber(){
 }
 
 void randomFill(int* arr, int n) {
-    #pragma omp parallel for
     for (int i = 0; i < n; i++) {
         arr[i] = randomNumber();
     }
@@ -66,7 +65,7 @@ int main() {
             break;
         case 2: 
             std::cout << "Generando un tamaño aleatorio\n";
-            len = randomNumber();
+            len = randomNumber() + 1;
             std::cout << "El tamaño es de " << len << " elementos. \n";
             break;
         default:
